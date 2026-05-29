@@ -1,27 +1,128 @@
-# PokemonSsr
+# Pokémon SSR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.15.
+Aplicación Angular con Server Side Rendering para consultar Pokémon desde PokeAPI. El proyecto muestra listados paginados, páginas de detalle, sprites oficiales, metadatos SEO/Open Graph y generación de rutas para prerender.
 
-## Development server
+## 🚀 Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+> Actualmente no hay una demo pública disponible. El proyecto puede ejecutarse en local siguiendo las instrucciones de instalación.
 
-## Code scaffolding
+## 📸 Capturas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> Pendiente de añadir capturas de pantalla de la aplicación.
 
-## Build
+## 🧩 Funcionalidades
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Listado paginado de Pokémon consumiendo `https://pokeapi.co/api/v2/pokemon`.
+* Página de detalle por ID o nombre de Pokémon.
+* Tarjetas con imagen oficial desde el repositorio de sprites de PokeAPI.
+* Rutas lazy con componentes standalone.
+* Skeleton de carga para el listado.
+* Actualización dinámica de `Title` y metatags en la página de detalle.
+* Metadatos Open Graph para título, descripción e imagen.
+* Angular SSR con servidor Express.
+* Script `scripts/prerender-routes.js` para generar `routes.txt` con rutas de Pokémon y páginas.
+* Tests unitarios configurados para rutas, servicios y componentes.
 
-## Running unit tests
+## 🛠️ Tecnologías utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Frontend**
 
-## Running end-to-end tests
+* Angular 18
+* TypeScript
+* RxJS
+* Angular Router
+* Tailwind CSS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**SSR**
 
-## Further help
+* Angular SSR
+* Express
+* Node.js
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**API externa**
+
+* PokeAPI
+
+**Testing**
+
+* Karma
+* Jasmine
+* Chrome Headless
+
+## 🏗️ Arquitectura y estructura
+
+```text
+pokemon-ssr/
+├── scripts/
+│   └── prerender-routes.js
+├── src/
+│   ├── app/
+│   │   ├── pages/
+│   │   ├── pokemons/
+│   │   │   ├── components/
+│   │   │   ├── interfaces/
+│   │   │   └── services/
+│   │   ├── shared/
+│   │   └── app.routes.ts
+│   ├── main.ts
+│   └── main.server.ts
+├── server.ts
+├── package.json
+└── README.md
+```
+
+## ⚙️ Instalación y ejecución
+
+```bash
+npm install
+npm start
+```
+
+La app se sirve normalmente en `http://localhost:4200/`.
+
+## 🧪 Tests
+
+```bash
+npm test
+```
+
+El script está configurado con Chrome Headless:
+
+```json
+"test": "ng test --no-watch --no-progress --browsers ChromeHeadless"
+```
+
+## 📦 Build o despliegue
+
+El build ejecuta tests, genera rutas de prerender y compila la app:
+
+```bash
+npm run build
+```
+
+Para servir la versión SSR generada:
+
+```bash
+npm run serve:ssr:pokemon-ssr
+```
+
+## 📌 Estado del proyecto
+
+Proyecto académico/demo técnica con funcionalidad principal implementada.
+
+Posibles mejoras futuras:
+
+* Añadir capturas del listado y detalle.
+* Documentar límites de prerender configurados en `scripts/prerender-routes.js`.
+* Mejorar manejo visual de errores de PokeAPI.
+* Añadir paginación visible si no está cubierta por la UI actual.
+* Revisar textos en español/inglés para unificar idioma.
+
+## 👨‍💻 Autor
+
+Lorenzo Bellido Barrena
+
+* Portfolio: https://lorenzo-bellido.vercel.app/
+* LinkedIn: https://www.linkedin.com/in/lorenzo-bellido-barrena/
+* GitHub: https://github.com/LorenzoBellidoBarrena
+* Email: [lorenzobeba2@gmail.com](mailto:lorenzobeba2@gmail.com)
