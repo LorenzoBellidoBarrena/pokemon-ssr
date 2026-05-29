@@ -8,7 +8,11 @@ Aplicación Angular con Server Side Rendering para consultar Pokémon desde Poke
 
 ## 📸 Capturas
 
-> Pendiente de añadir capturas de pantalla de la aplicación.
+![Página informativa](screenshots/about.png)
+
+![Listado paginado de Pokémon](screenshots/pokemon-list.png)
+
+![Detalle de Pokémon](screenshots/pokemon-detail.png)
 
 ## 🧩 Funcionalidades
 
